@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - Perspolis Restaurant</title>
+  <link rel="stylesheet" href="css.css">
+
+  <!-- Font Awesome برای آیکون‌ها -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" href="images/logo-removebg-preview.png" type="png">
+  <!-- برای درست کار کردن تب‌ها -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="menu-page">
+
+  <!-- Header -->
+  <header class="header d-flex justify-content-between align-items-center py-3 px-4">
+  <div class="site-name">
+    <h1>Perspolis Restaurant</h1>
+  </div>
+  <div class="site-logo">
+    <a href="index.html">
+      <img src="images/logo-removebg-preview.png" alt="Perspolis Restaurant Logo">
+    </a>
+  </div>
+    <nav>
+      <ul class="nav justify-content-center">
+        <li class="nav-item"><a class="nav-link fancy-btn" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link fancy-btn" href="menu.html">Menu</a></li>
+        <li class="nav-item"><a class="nav-link fancy-btn" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link fancy-btn" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- اینجا منو میاد -->
+   
+  <main class="container my-5">  
+<section id="menu" class="pt-5 pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5 menu-header">
+                <h1 class="menu-title">Our Menu</h1>
+            </div>
+        </div>
+
+        <!-- Hamburger Button برای موبایل -->
+        <button class="mobile-tab-btn d-block d-md-none mb-3" id="mobileTabBtn">
+          <i class="fas fa-ellipsis-h fa-2x"></i>
+        </button>
+
+        <!-- Mobile Tabs Container -->
+        <ul class="nav flex-column mobile-tabs d-none mb-4" id="mobileTabs">
+          <li class="nav-item">
+            <button class="nav-link active" data-bs-target="#starters">Starters</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-target="#main">Main Courses</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-target="#drinks">Drinks</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-target="#desserts">Desserts</button>
+          </li>
+        </ul>
+        <!-- Tabs -->
+        <ul class="nav nav-tabs justify-content-center mb-4" id="menuTabs" role="tablist">
+            <!-- Starters -->
+<li class="nav-item" role="presentation">
+  <button class="nav-link active shadow-sm" id="starters-tab" data-bs-toggle="tab" data-bs-target="#starters" type="button" role="tab">
+    <i class="fas fa-utensils me-2"></i> Starters
+  </button>
+</li>
+
+<!-- Main -->
+<li class="nav-item" role="presentation">
+  <button class="nav-link shadow-sm" id="main-tab" data-bs-toggle="tab" data-bs-target="#main" type="button" role="tab">
+    <i class="fas fa-drumstick-bite me-2"></i> Main Courses
+  </button>
+</li>
+
+<!-- Drinks -->
+<li class="nav-item" role="presentation">
+  <button class="nav-link shadow-sm" id="drinks-tab" data-bs-toggle="tab" data-bs-target="#drinks" type="button" role="tab">
+    <i class="fas fa-wine-glass-alt me-2"></i> Drinks
+  </button>
+</li>
+
+<!-- Desserts -->
+<li class="nav-item" role="presentation">
+  <button class="nav-link shadow-sm" id="desserts-tab" data-bs-toggle="tab" data-bs-target="#desserts" type="button" role="tab">
+    <i class="fas fa-ice-cream me-2"></i> Desserts
+  </button>
+</li>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="menuTabsContent">
+
+            <!-- Starters -->
+            <div class="tab-pane fade show active" id="starters" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/ash-doq.jpg" alt="Ash Doogh" class="img-fluid">
+                            <div class="food-info">
+                                <h5>Ash Doogh <span>$7</span></h5>
+                                <p>Warm yogurt and herb soup with rice and chickpeas.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/mast-o-khiar.jpg" alt="mast o mast-o-khiar" class="img-fluid">
+                            <div class="food-info">
+                                <h5>masto khiar <span>$5</span></h5>
+                                <p>Creamy yogurt with cucumber, mint and a hint of garlic, fresh and traditional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/kashke bademjan.jpg" alt="kashke bademjan" class="img-fluid">
+                            <div class="food-info">
+                                <h5>kashke bademjan<span>$7</span></h5>
+                                <p>Roasted eggplant with kashk (fermented yogurt), garlic and fried onions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/mirza qasemi.jpg" alt="mirza qasemi" class="img-fluid">
+                            <div class="food-info">
+                                <h5>mirza qasemi <span>$7</span></h5>
+                                <p>Smoked eggplant with tomato, garlic and egg, rich in flavor and perfect for sharing.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/doulme barg.jpg" alt="doulme barg" class="img-fluid">
+                            <div class="food-info">
+                                <h5>doulme barg <span>$6</span></h5>
+                                <p>Grape leaves stuffed with rice, herbs and spices, a refined Persian classic.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/jow soup.jpg" alt="jow soup" class="img-fluid">
+                            <div class="food-info">
+                                <h5>jow soup <span>$6</span></h5>
+                                <p>Traditional Iranian barley soup with vegetables and a smooth, creamy texture.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/ash reshteh.jpg" alt="ash reshteh" class="img-fluid">
+                            <div class="food-info">
+                                <h5>ash reshteh <span>$6</span></h5>
+                                <p>Hearty Persian noodle and bean soup with herbs, served with kashk, comforting and traditional.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/zeytoon parvardeh.jpg" alt="zeytoon parvardeh" class="img-fluid">
+                            <div class="food-info">
+                                <h5>zeytoon parvardeh <span>$4</span></h5>
+                                <p>Marinated olives with pomegranate, walnuts and herbs, a tangy and traditional Persian starter.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/kuku-sabzi.jpg" alt="Kuku Sabzi" class="img-fluid">
+                            <div class="food-info">
+                                <h5>Kuku Sabzi <span>$7</span></h5>
+                                <p>Herb frittata with a blend of fresh Persian herbs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Courses -->
+            <div class="tab-pane fade" id="main" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/qorme-sabzi.jpg" alt="Ghorme Sabzi" class="img-fluid">
+                            <div class="food-info">
+                                <h5>Ghorme Sabzi <span>$18</span></h5>
+                                <p>Traditional Persian herb stew with beef or lamb.</p>
+                            </div>
+                        </div>
+                    </div>
+                       <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/gheymeh.jpg" alt="gheymeh" class="img-fluid">
+                            <div class="food-info">
+                                <h5>gheymeh <span>$18</span></h5>
+                                <p>Traditional Persian stew with lamb, split peas, tomato and dried lime, served with saffron rice.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/fesenjaan.png" alt="fesenjaan" class="img-fluid">
+                            <div class="food-info">
+                                <h5>fesenjaan <span>$20</span></h5>
+                                <p>Rich Persian stew with chicken or duck, ground walnuts and pomegranate sauce, sweet and tangy.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/zereshk polo morq.jpg" alt="zereshk polo morq" class="img-fluid">
+                            <div class="food-info">
+                                <h5>zereshk polo morq <span>$22</span></h5>
+                                <p>Saffron rice with barberries and tender chicken, a classic Persian main course.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/tahchin.jpg" alt="tahchin" class="img-fluid">
+                            <div class="food-info">
+                                <h5>tahchin <span>$20</span></h5>
+                                <p>Baked saffron rice layered with yogurt-marinated chicken or lamb, golden crust, flavorful inside.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/baghali polo mahicheh.jpg" alt="baghali polo mahicheh" class="img-fluid">
+                            <div class="food-info">
+                                <h5>baghali polo mahicheh <span>$27</span></h5>
+                                <p>Persian rice with dill and fava beans, served with tender lamb shank, fragrant and hearty.</p>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/sabzi polo mahi.jpg" alt="sabzi polo mahi" class="img-fluid">
+                            <div class="food-info">
+                                <h5>sabzi polo mahi <span>$24</span></h5>
+                                <p>Herbed rice with fish, traditionally served at Persian New Year, fresh and flavorful.</p>
+                            </div>
+                        </div>
+                    </div>
+                       <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/kabab barg.webp" alt="kabab barg" class="img-fluid">
+                            <div class="food-info">
+                                <h5>Kabab barg <span>$28</span></h5>
+                                <p>Tender marinated beef or lamb slices grilled on skewers, served with saffron rice, classic Persian kabab.</p>
+                            </div>
+                        </div>
+                    </div>
+                       <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/joje kabab.jpg" alt="joje kabab" class="img-fluid">
+                            <div class="food-info">
+                                <h5>joje kabab <span>$28</span></h5>
+                                <p>Tender saffron-marinated chicken pieces grilled to perfection on skewers, served with saffron rice a classic Persian delight.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/kebab.jpg" alt="Kabab koobideh" class="img-fluid">
+                            <div class="food-info">
+                                <h5>Kabab koobideh <span>$28</span></h5>
+                                <p>Juicy minced beef or lamb seasoned with onions and spices, molded onto skewers and grilled to perfection, a staple Persian kebab. served with saffron rice.</p>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/shishlik.jpg" alt="shishlik" class="img-fluid">
+                            <div class="food-info">
+                                <h5>shishlik <span>$24</span></h5>
+                                <p>Marinated lamb chops grilled over open flame for a smoky and tender finish, a premium Persian kebab full of flavor.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/loobia-polo.jpg" alt="kebab" class="img-fluid">
+                            <div class="food-info">
+                                <h5>loobia-polo <span>$23</span></h5>
+                                <p>Traditional Persian rice dish with green beans, minced meat and aromatic spices.</p>
+                            </div>
+                        </div>
+                    </div>
+                      <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/dizi.jpg" alt="dizi (aab goosht)" class="img-fluid">
+                            <div class="food-info">
+                                <h5>dizi(aab goosht) <span>$17</span></h5>
+                                <p>Hearty Persian lamb and chickpea stew with potatoes and tomato, slow-cooked for rich flavor, traditionally served with bread.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drinks -->
+            <div class="tab-pane fade" id="drinks" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/doogh.jpg" alt="Doogh" class="img-fluid">
+                            <div class="food-info">
+                                <h5>Doogh <span>$5</span></h5>
+                                <p>Refreshing yogurt drink with mint.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/persian-tea.jpg" alt="Persian Tea" class="img-fluid">
+                            <div class="food-info">
+                                <h5>Persian Tea <span>$3</span></h5>
+                                <p>Traditional black tea served hot.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="tab-pane fade" id="desserts" role="tabpanel">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/shooleh-zard.jpg" alt="Sholeh Zard" class="img-fluid">
+                            <div class="food-info">
+                                <h5>Sholeh Zard <span>$10</span></h5>
+                                <p>Saffron rice pudding with rose water.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="food-card">
+                            <img src="images/faloodeh.jpg" alt="Faloodeh" class="img-fluid">
+                            <div class="food-info">
+                                <h5>Faloodeh <span>$12</span></h5>
+                                <p>Persian frozen dessert with rose water and vermicelli.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    
+          </section>
+  </main>
+  <!-- container برای لود شدن محتوای سفارش آنلاین -->
+<div id="online-order-container"></div>
+
+<!-- Online Order Button -->
+<a href="#" class="online-order-btn" id="onlineOrderBtn">Online Order</a>
+
+<!-- Modal -->
+<div id="onlineOrderModal" class="order-modal">
+  <div class="order-modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="close-modal" aria-label="Close">&times;</button>
+
+    <h2 id="modalTitle">Place Your Online Order</h2>
+    <p>Please choose your items and submit your order.</p>
+
+    <div class="modal-body">
+      <!-- Recipe menu -->
+      <div class="recipe-menu">
+         <!-- Starters -->
+        <div class="recipe">
+          <p class="name">Ash Doogh</p>
+          <img src="images/ash-doq.jpg" alt="Ash Doogh">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>7</span>$</p>
+        </div>
+        <div class="recipe">
+          <p class="name">kashke bademjan</p>
+          <img src="images/kashke bademjan.jpg" alt="kashke bademjan">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>7</span>$</p>
+        </div>
+           <div class="recipe">
+          <p class="name">mirza qasemi</p>
+          <img src="images/mirza qasemi.jpg" alt="mirza qasemi">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>7</span>$</p>
+        </div>
+           <div class="recipe">
+          <p class="name">doulme barg</p>
+          <img src="images/doulme barg.jpg" alt="doulme barg">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>6</span>$</p>
+        </div>
+           <div class="recipe">
+          <p class="name">jow soup</p>
+          <img src="images/jow soup.jpg" alt="jow soup">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>6</span>$</p>
+        </div>
+           <div class="recipe">
+          <p class="name">zeytoon parvardeh</p>
+          <img src="images/zeytoon parvardeh.jpg" alt="zeytoon parvardeh">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>4</span>$</p>
+        </div>
+           <div class="recipe">
+          <p class="name">ash reshteh</p>
+          <img src="images/ash reshteh.jpg" alt="ash reshteh">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>10</span>$</p>
+        </div>
+           <div class="recipe">
+          <p class="name">mast o khiar</p>
+          <img src="images/mast-o-khiar.jpg" alt="mast o khiar">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>5</span>$</p>
+        </div>
+           <div class="recipe">
+          <p class="name">Kuku Sabzi</p>
+          <img src="images/kuku-sabzi.jpg" alt="Kuku Sabzi">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>10</span>$</p>
+        </div>
+        <!--main course-->
+        <div class="recipe">
+          <p class="name">Ghorme Sabzi</p>
+          <img src="images/qorme-sabzi.jpg" alt="Ghorme Sabzi">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>24</span>$</p>
+        </div>
+        <div class="recipe">
+          <p class="name">gheymeh</p>
+          <img src="images/gheymeh.jpg" alt="gheymeh">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>18</span>$</p>
+        </div>
+        <div class="recipe">
+          <p class="name">loobia-polo</p>
+          <img src="images/loobia-polo.jpg" alt="loobia-polo">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>23</span>$</p>
+        </div>
+          <div class="recipe">
+          <p class="name">fesenjaan</p>
+          <img src="images/fesenjaan.png" alt="fesenjaan">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>20</span>$</p>
+        </div>
+          <div class="recipe">
+          <p class="name">zereshk polo morq</p>
+          <img src="images/zereshk polo morq.jpg" alt="zereshk polo morq">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>22</span>$</p>
+        </div>
+          <div class="recipe">
+          <p class="name">tahchin</p>
+          <img src="images/tahchin.jpg" alt="tahchin">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>20</span>$</p>
+        </div>
+          <div class="recipe">
+          <p class="name">baghali polo mahicheh</p>
+          <img src="images/baghali polo mahicheh.jpg" alt="baghali polo mahicheh">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>27</span>$</p>
+        </div>
+          <div class="recipe">
+          <p class="name">sabzi polo mahi</p>
+          <img src="images/sabzi polo mahi.jpg" alt="sabzi polo mahi">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>24</span>$</p>
+        </div>
+          <div class="recipe">
+          <p class="name">Kabab barg</p>
+          <img src="images/kabab barg.webp" alt="Kabab barg">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>28</span>$</p>
+        </div>
+          <div class="recipe">
+          <p class="name">joje kabab</p>
+          <img src="images/joje kabab.jpg" alt="joje kabab">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>28</span>$</p>
+        </div>
+          <div class="recipe">
+          <p class="name">Kabab koobideh</p>
+          <img src="images/kebab.jpg" alt="Kabab koobideh">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>28</span>$</p>
+        </div>
+          <div class="recipe">
+          <p class="name">shishlik</p>
+          <img src="images/shishlik.jpg" alt="shishlik">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>24</span>$</p>
+        </div>
+          <div class="recipe">
+          <p class="name">dizi(abgoosht)</p>
+          <img src="images/dizi.jpg" alt="dizi(abgoosht)">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>17</span>$</p>
+        </div>
+        <!--drinks-->
+        <div class="recipe">
+          <p class="name">Doogh</p>
+          <img src="images/doogh.jpg" alt="Doogh">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>5</span>$</p>
+        </div>
+        <div class="recipe">
+          <p class="name">persian-tea</p>
+          <img src="images/persian-tea.jpg" alt="persian-tea">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>3</span>$</p>
+        </div>
+        <!--desserts-->
+        <div class="recipe">
+          <p class="name">Sholeh Zard</p>
+          <img src="images/shooleh-zard.jpg" alt="Sholeh Zard">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>10</span>$</p>
+        </div>
+        <div class="recipe">
+          <p class="name">faloodeh</p>
+          <img src="images/faloodeh.jpg" alt="faloodeh">
+          <a class="btnStyle addToCart">Add to Cart</a>
+          <p class="price"><span>12</span>$</p>
+        </div>
+      </div>
+
+      <!-- Cart -->
+      <aside class="cart">
+        <h3>Your Orders: <span id="cartTotal">0$</span></h3>
+        <ol id="listOfOrders"></ol>
+        <button class="finishOrder btnStyle">Finish Order</button>
+      </aside>
+    </div>
+
+    <!-- Form نهایی سفارش -->
+    <div id="finishOrderDialog" class="finishDialog" style="display:none;">
+      <h3>Confirm Your Order</h3>
+      <ol id="finalOrderList"></ol>
+      <input type="text" id="buyerName" placeholder="Enter Name">
+      <input type="text" id="buyerNumber" placeholder="Enter Phone Number">
+      <input type="text" id="buyerAddress" placeholder="Enter Address">
+      <input type="text" id="buyerCity" placeholder="Enter City">
+      <input type="text" id="buyerCountry" placeholder="Enter Country">
+      <button class="order btnStyle">Order!</button>
+    </div>
+
+    <div id="thanksMessage" style="display:none;">
+      <h1>Thank you for the order</h1>
+      <h3>We will have it delivered soon</h3>
+    </div>
+  </div>
+</div>
+
+
+<script src="js.js"></script>
+
+</body>
+</html>

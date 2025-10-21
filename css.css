@@ -1,0 +1,318 @@
+/* Header */
+header.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px; /* padding kam kardam ke responsive beshe */
+  width: 100%;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  color: #fff;
+  flex-wrap: wrap; /* baraye responsive mobile */
+}
+
+/* Logo */
+.site-logo img {
+  height: 60px;
+  width: auto;
+  background: transparent; /* zamine shafaf */
+  display: block;
+}
+
+
+
+.fancy-btn {
+  background: linear-gradient(45deg, #121313, #ffffff);
+  border-radius: 25px;
+  padding: 10px 25px;
+  color: white !important;
+  font-weight: bold;
+  text-transform: capitalize;
+  box-shadow: 0 4px 15px rgb(237, 236, 237);
+  transition: all 0.3s ease-in-out;
+  margin: 0 8px;
+}
+
+.fancy-btn:hover {
+  background: linear-gradient(45deg, #ffcc00, #ff0000);
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(255, 166, 0, 0.7);
+}
+
+ body.home-page {
+    background: url("images/bg.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+body.menu-page {
+  background: url("images/bg-carpet.jpg");
+}
+.menu-header {
+  position: relative;
+  display: inline-block;
+  padding: 20px 5px;
+  background: linear-gradient(135deg, #f532027c, #e69464);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.menu-title {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+/* افکت نور / برق */
+.menu-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, rgba(255,255,255,0.4), rgba(255,255,255,0.1), rgba(255,255,255,0.4));
+  transform: skewX(-25deg);
+  animation: shine 2s infinite;
+}
+
+@keyframes shine {
+  0% { left: -75%; }
+  100% { left: 125%; }
+}
+
+.food-card {
+    position: relative;
+    margin-top: 20px;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #fff8f0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.food-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s;
+}
+.food-card:hover img {
+    transform: scale(1.05);
+}
+.food-info {
+    padding: 10px;
+}
+.food-info h5 {
+    font-size: 18px;
+    font-weight: 700;
+
+    color: #c0392b;
+}
+.food-info h5 span {
+    float: right;
+    color: #e67e22;
+}
+.food-info p {
+    font-size: 14px;
+    font-weight: 300;
+    margin: 0;
+}
+@media (max-width: 768px) {
+    .food-info h5 span {
+        float: none;
+        display: block;
+        margin-top: 5px;
+    }
+}
+/* حالت کلی تب‌ها */
+.nav-tabs {
+  background: rgba(255, 255, 255, 0.2); /* نیمه‌شفاف */
+  backdrop-filter: blur(12px);           /* مات شیشه‌ای */
+  border-radius: 15px;
+  padding: 10px;
+  display: inline-flex;
+  min-height: 70px;      /* ارتفاع ثابت کل تب‌ها → جلوگیری از تکون خوردن */
+  align-items: center;   /* وسط‌چین شدن آیتم‌ها */
+  margin-bottom: 30px;   /* فاصله بین تب‌ها و آیتم‌های غذا */
+}
+
+/* خود تب‌ها */
+.nav-tabs .nav-link {
+  border-radius: 12px;
+  margin: 0 8px;
+  padding: 12px 22px;
+  height: 55px;                /* ارتفاع ثابت → جلوگیری از تکون خوردن */
+  display: flex;
+  align-items: center;
+  justify-content: center;     /* متن + آیکون وسط چین */
+  background: rgba(255,255,255,0.3); /* پس‌زمینه شیشه‌ای */
+  color: #333;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+/* آیکون تب‌ها */
+.nav-tabs .nav-link i {
+  font-size: 18px;
+  color: #ff0000;
+}
+
+/* وقتی موس میره روش */
+.nav-tabs .nav-link:hover {
+  color: #ff0000 !important; /* نارنجی */
+  background: rgba(255,255,255,0.5);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* وقتی تب فعال میشه */
+.nav-tabs .nav-link.active {
+  background: rgba(255, 60, 0, 0.9);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
+}
+
+/* آیکون داخل تب فعال */
+.nav-tabs .nav-link.active i {
+  color: rgb(231, 4, 4);
+}
+
+/* دکمه Online Order شیشه‌ای */
+.online-order-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  padding: 15px 30px;
+  background: rgba(255, 123, 0, 0.9);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  text-decoration: none;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.online-order-btn:hover {
+  background: rgba(255, 195, 0, 0.95);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* Modal */
+.order-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  align-items: center;
+  justify-content: center;
+}
+
+.order-modal[aria-hidden="false"] { display: flex; }
+
+.order-modal-content {
+  background: rgba(255,255,255,0.98);
+  backdrop-filter: blur(6px);
+  width: 95%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  right: 14px;
+  top: 12px;
+  font-size: 26px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.modal-body { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+
+.recipe-menu { display: flex; flex-wrap: wrap; gap: 16px; flex: 1 1 600px; }
+
+.recipe {
+  width: 220px;
+  background: #fff8f0;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  padding: 8px;
+  text-align: center;
+  position: relative;
+}
+.recipe img { width: 100%; height: 140px; object-fit: cover; border-radius: 6px; }
+.recipe .name { font-weight: 700; margin: 8px 0 4px; }
+.recipe .price { font-weight: 700; margin-top: 6px; }
+.btnStyle { display: inline-block; text-decoration: none; padding: 8px 12px; border-radius: 8px; background: #A7D2CB; color: #111; cursor: pointer; }
+.addToCart { margin-top: 6px; }
+
+.cart {
+  width: 260px;
+  background: #874C62;
+  color: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+  flex: 0 0 260px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.cart h3 { font-size: 16px; margin-bottom: 10px; }
+.cart ol { list-style: decimal inside; margin: 0; padding: 0; }
+.cart ol li { margin: 8px 0; display:flex; justify-content:space-between; align-items:center; gap:8px; }
+.cart .delBtn { color: #F2D388; cursor:pointer; margin-left: 8px; }
+
+.finishDialog { margin-top: 16px; text-align: center; }
+#finishOrderDialog input { display:block; width: 90%; margin: 8px auto; padding: 8px; border-radius: 6px; border: 1px solid #ccc; }
+
+@media (max-width: 880px) { .modal-body { flex-direction: column-reverse; align-items: stretch; } .cart { width: 100%; max-height: 200px; } .recipe { width: calc(50% - 12px); } }
+@media (max-width: 480px) { .recipe { width: 100%; } }
+
+/* دکمه موبایل */
+.mobile-tab-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* منوی موبایل اولیه مخفی */
+.mobile-tabs {
+  display: none;
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* وقتی فعال شد */
+.mobile-tabs.show {
+  display: flex !important;
+  flex-direction: column;
+  gap: 10px;
+}
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+}
+
