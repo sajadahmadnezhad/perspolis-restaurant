@@ -14,13 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
   let cart = [];
   let total = 0;
 
-  // باز کردن مودال
+  // open modal
   orderBtn.addEventListener("click", (e) => {
     e.preventDefault();
     orderModal.style.display = "block";
   });
 
-  // بستن مودال
+  // close modal
   closeModal.addEventListener("click", () => {
     orderModal.style.display = "none";
   });
@@ -34,7 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const name = recipe.querySelector(".name").innerText;
     const price = parseFloat(recipe.querySelector(".price").innerText.replace('$',''));
 
-    // چک کن اگر محصول قبلاً اضافه شده
+    // check if product existing
     const existing = cart.find(item => item.name === name);
     if (existing) {
       existing.quantity += 1;
@@ -54,7 +54,7 @@ function renderCart() {
     const li = document.createElement("li");
     li.innerText = `${item.name} - $${item.price} x ${item.quantity}`;
 
-    // دکمه +
+    // button +
     const plusBtn = document.createElement("button");
     plusBtn.innerText = "+";
     plusBtn.addEventListener("click", () => {
@@ -62,7 +62,7 @@ function renderCart() {
       renderCart();
     });
 
-    // دکمه -
+    // button -
     const minusBtn = document.createElement("button");
     minusBtn.innerText = "-";
     minusBtn.addEventListener("click", () => {
@@ -80,7 +80,7 @@ function renderCart() {
 }
 
 
-  // نمایش فرم نهایی
+  // show the order form
   finishOrderBtn.addEventListener("click", () => {
     if (cart.length === 0) return alert("Your cart is empty!");
     finishOrderDialog.style.display = "block";
@@ -90,9 +90,11 @@ function renderCart() {
       li.innerText = `${item.name} - $${item.price}`;
       finalOrderList.appendChild(li);
     });
+      finishOrderDialog.scrollIntoView({ behavior: "smooth", block: "start" });
+
   });
 
- // دکمه Order نهایی
+ // submit order
 orderBtnFinal.addEventListener("click", async () => {
   const name = document.getElementById("buyerName").value.trim();
   const phone = document.getElementById("buyerNumber").value.trim();
@@ -103,17 +105,16 @@ const country = document.getElementById("buyerCountry").value.trim();
     alert("Please fill in all fields!");
     return;
   }
- // 🔹 اینجا console.log اضافه می‌کنیم
-  console.log("ارسال به سرور:", { name, phone, address, city, country });
+  console.log("send to the server:", { name, phone, address, city, country });
 
   try {
-    // 1. ایجاد کاربر جدید
+    // 1.make new
     const userRes = await fetch("http://localhost:3000/api/users", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         name,
-        email: `${Date.now()}@test.com`, // یه ایمیل تستی یکتا
+        email: `${Date.now()}@test.com`, //test email
         phone
       })
     });
@@ -122,13 +123,13 @@ const country = document.getElementById("buyerCountry").value.trim();
     const userData = await userRes.json();
     const userId = userData.userId;
 
-    // 2. ایجاد آدرس برای کاربر
+    // 2.make address for user
     const addressRes = await fetch("http://localhost:3000/api/addresses", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         user_id: userId,
-        label: "خانه",
+        label: "home",
         line1: address,
         city: city || null,
         postal_code: null,
@@ -140,12 +141,11 @@ const country = document.getElementById("buyerCountry").value.trim();
     const addressData = await addressRes.json();
     const addressId = addressData.addressId;
 
-    // 3. ثبت هر سفارش داخل cart
+    // 3.submit item in cart
    for (const item of cart) {
-  // بررسی مقادیر قبل از ارسال
   if (!item.name || item.quantity <= 0) {
-    console.warn("محصول نامعتبر، رد شد:", item);
-    continue; // رد کردن محصول نامعتبر
+    console.warn("Invalid product, skipped", item);
+    continue;
   }
 
   const orderRes = await fetch("http://localhost:3000/api/orders", {
@@ -153,45 +153,55 @@ const country = document.getElementById("buyerCountry").value.trim();
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       user_id: userId,
-      user_name: name,         // مطمئن شو همیشه مقدار دارد
+      user_name: name,       
       address_id: addressId,
       product_name: item.name,
       quantity: item.quantity
     })
   });
 
-  // بررسی جواب سرور
+// Check server response
   if (!orderRes.ok) {
     const errText = await orderRes.text();
     throw new Error("خطا در ثبت سفارش: " + errText);
   }
 }
 
-    // نمایش پیام تشکر
-    finishOrderDialog.style.display = "none";
-    orderModal.style.display = "none";
-    thanksMessage.style.display = "block";
+// Show thank you message with nice effect
+finishOrderDialog.style.display = "none";
+orderModal.style.display = "none";
 
-    // ریست کردن سبد
-    cart = [];
-    total = 0;
-    listOfOrders.innerHTML = "";
-    cartTotal.innerText = "0$";
+// Display message
+thanksMessage.style.display = "block";
+thanksMessage.classList.add("show");
 
-    setTimeout(() => {
-      thanksMessage.style.display = "none";
-    }, 3000);
+// Reset cart
+cart = [];
+total = 0;
+listOfOrders.innerHTML = "";
+cartTotal.innerText = "0$";
+
+// After 4 seconds, hide the message
+setTimeout(() => {
+  thanksMessage.classList.remove("show");
+
+  // After animation ends (500ms), completely hide it
+  setTimeout(() => {
+    thanksMessage.style.display = "none";
+  }, 500);
+}, 4000);
+
 
    } catch (err) {
-    console.error("🔥 خطا در بخش ثبت سفارش:", err);
-    alert("خطا در ثبت سفارش! لطفاً کنسول را چک کنید (F12).");
+    console.error("🔥 Error in order section:", err);
+    alert("Error placing order! Please check the console (F12).");
   }
 
 });
 });
 
 
-// دکمه موبایل و منوی تب‌ها
+// Mobile button and tab menu
 const mobileTabBtn = document.getElementById('mobileTabBtn');
 const mobileTabs = document.getElementById('mobileTabs');
 
@@ -199,24 +209,24 @@ mobileTabBtn.addEventListener('click', () => {
   mobileTabs.classList.toggle('show');
 });
 
-// تغییر tab content هنگام کلیک روی منوی موبایل
+// Change tab content when clicking mobile menu
 mobileTabs.querySelectorAll('button').forEach(btn => {
   btn.addEventListener('click', (e) => {
     const target = e.currentTarget.getAttribute('data-bs-target');
 
-    // پنهان کردن همه tab-pane ها
+    // Hide all tab panes
     document.querySelectorAll('.tab-pane').forEach(pane => {
       pane.classList.remove('show', 'active');
     });
 
-    // فعال کردن tab-pane انتخاب شده
+    // Activate the selected tab pane
     const pane = document.querySelector(target);
     pane.classList.add('show', 'active');
 
-    // بستن منوی موبایل
+    // Close mobile menu
     mobileTabs.classList.remove('show');
 
-    // آپدیت کلاس active روی دکمه‌ها
+    // Update active class on buttons
     mobileTabs.querySelectorAll('button').forEach(b => b.classList.remove('active'));
     e.currentTarget.classList.add('active');
   });
