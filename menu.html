@@ -17,24 +17,29 @@
 <body class="menu-page">
 
   <!-- Header -->
-  <header class="header d-flex justify-content-between align-items-center py-3 px-4">
-  <div class="site-name">
-    <h1>Perspolis Restaurant</h1>
-  </div>
-  <div class="site-logo">
-    <a href="index.html">
-      <img src="images/logo-removebg-preview.png" alt="Perspolis Restaurant Logo">
+ <nav class="navbar navbar-expand-md navbar-light bg-light py-3">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/logo-removebg-preview.png" alt="Perspolis Logo" height="40">
+      Perspolis Restaurant
     </a>
-  </div>
-    <nav>
-      <ul class="nav justify-content-center">
-        <li class="nav-item"><a class="nav-link fancy-btn" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link fancy-btn" href="menu.html">Menu</a></li>
-        <li class="nav-item"><a class="nav-link fancy-btn" href="about.html">About Us</a></li>
-        <li class="nav-item"><a class="nav-link fancy-btn" href="contact.html">Contact</a></li>
+    <!-- Hamburger button baraye mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
       </ul>
-    </nav>
-  </header>
+    </div>
+  </div>
+</nav>
+
 
   <!-- اینجا منو میاد -->
    
@@ -565,14 +570,17 @@
       <button class="order btnStyle">Order!</button>
     </div>
 
-    <div id="thanksMessage" style="display:none;">
-      <h1>Thank you for the order</h1>
-      <h3>We will have it delivered soon</h3>
-    </div>
+
+
   </div>
 </div>
 
-
+    <!-- پیام تشکر -->
+<div id="thanksMessage"
+     class="position-fixed bottom-0 end-0 m-3 p-3 bg-success text-white rounded shadow"
+     style="display: none; z-index: 2000;">
+  <i class="fa-solid fa-check-circle me-2"></i>
+your order has been successfully placed!</div>
 <script src="js.js"></script>
 
 </body>
