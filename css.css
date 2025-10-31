@@ -3,21 +3,21 @@ header.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px; /* padding kam kardam ke responsive beshe */
+  padding: 15px 30px; 
   width: 100%;
   background: rgba(255,255,255,0.2);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   color: #fff;
-  flex-wrap: wrap; /* baraye responsive mobile */
+  flex-wrap: wrap;
 }
 
 /* Logo */
 .site-logo img {
   height: 60px;
   width: auto;
-  background: transparent; /* zamine shafaf */
+  background: transparent; 
   display: block;
 }
 
@@ -48,6 +48,9 @@ header.header {
 body.menu-page {
   background: url("images/bg-carpet.jpg");
 }
+body.about-page {
+  background-image: url("images/background_nesfe_abi.webp");
+}
 .menu-header {
   position: relative;
   display: inline-block;
@@ -69,7 +72,7 @@ body.menu-page {
   letter-spacing: 3px;
 }
 
-/* افکت نور / برق */
+/*light effect*/
 .menu-header::after {
   content: "";
   position: absolute;
@@ -131,47 +134,47 @@ body.menu-page {
         margin-top: 5px;
     }
 }
-/* حالت کلی تب‌ها */
+/* tabs state*/
 .nav-tabs {
-  background: rgba(255, 255, 255, 0.2); /* نیمه‌شفاف */
-  backdrop-filter: blur(12px);           /* مات شیشه‌ای */
+  background: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(12px);           
   border-radius: 15px;
   padding: 10px;
   display: inline-flex;
-  min-height: 70px;      /* ارتفاع ثابت کل تب‌ها → جلوگیری از تکون خوردن */
-  align-items: center;   /* وسط‌چین شدن آیتم‌ها */
-  margin-bottom: 30px;   /* فاصله بین تب‌ها و آیتم‌های غذا */
+  min-height: 70px;     
+  align-items: center;   
+  margin-bottom: 30px;   
 }
 
-/* خود تب‌ها */
+/* tabs*/
 .nav-tabs .nav-link {
   border-radius: 12px;
   margin: 0 8px;
   padding: 12px 22px;
-  height: 55px;                /* ارتفاع ثابت → جلوگیری از تکون خوردن */
+  height: 55px;               
   display: flex;
   align-items: center;
-  justify-content: center;     /* متن + آیکون وسط چین */
-  background: rgba(255,255,255,0.3); /* پس‌زمینه شیشه‌ای */
+  justify-content: center;    
+  background: rgba(255,255,255,0.3); 
   color: #333;
   transition: all 0.3s ease;
   font-weight: 500;
 }
 
-/* آیکون تب‌ها */
+/* tab icons */
 .nav-tabs .nav-link i {
   font-size: 18px;
   color: #ff0000;
 }
 
-/* وقتی موس میره روش */
+/* when mouse on tab*/
 .nav-tabs .nav-link:hover {
-  color: #ff0000 !important; /* نارنجی */
+  color: #ff0000 !important; 
   background: rgba(255,255,255,0.5);
   box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
 }
 
-/* وقتی تب فعال میشه */
+/* when tab active*/
 .nav-tabs .nav-link.active {
   background: rgba(255, 60, 0, 0.9);
   color: white;
@@ -179,12 +182,11 @@ body.menu-page {
   box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
 }
 
-/* آیکون داخل تب فعال */
 .nav-tabs .nav-link.active i {
   color: rgb(231, 4, 4);
 }
 
-/* دکمه Online Order شیشه‌ای */
+/*  Online Order glassy  */
 .online-order-btn {
   position: fixed;
   bottom: 30px;
@@ -286,7 +288,6 @@ body.menu-page {
 @media (max-width: 880px) { .modal-body { flex-direction: column-reverse; align-items: stretch; } .cart { width: 100%; max-height: 200px; } .recipe { width: calc(50% - 12px); } }
 @media (max-width: 480px) { .recipe { width: 100%; } }
 
-/* دکمه موبایل */
 .mobile-tab-btn {
   background: none;
   border: none;
@@ -294,7 +295,6 @@ body.menu-page {
   margin-bottom: 10px;
 }
 
-/* منوی موبایل اولیه مخفی */
 .mobile-tabs {
   display: none;
   background: #f8f9fa;
@@ -302,7 +302,6 @@ body.menu-page {
   border-radius: 5px;
 }
 
-/* وقتی فعال شد */
 .mobile-tabs.show {
   display: flex !important;
   flex-direction: column;
@@ -316,3 +315,12 @@ body.menu-page {
   width: 100%;
 }
 
+#thanksMessage {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#thanksMessage.show {
+  display: block !important;
+  opacity: 1;
+}
